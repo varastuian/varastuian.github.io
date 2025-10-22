@@ -1,35 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio template — replace text and projects.json with your content." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* small custom styles for nicer layout */
+    .card { transition: transform .15s ease, box-shadow .15s ease; }
+    .card:hover { transform: translateY(-6px); }
+  </style>
 </head>
-<body>
-  <header>
-    <h1>Vahid Arastuian</h1>
-    <p>Software Developer | Portfolio</p>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="assets/cv.pdf" target="_blank">Download CV</a>
-    </nav>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="bg-white shadow-sm sticky top-0 z-30">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div>
+        <a href="#" class="text-xl font-semibold" id="site-name">Your Name</a>
+        <p class="text-sm text-gray-500" id="site-role">Full‑Stack Developer</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle" class="px-3 py-1 rounded-md border">Toggle Dark</button>
+        <a href="assets/cv.pdf" target="_blank" class="px-3 py-1 rounded-md border">Download CV</a>
+        <a href="#contact" class="px-3 py-1 rounded-md bg-sky-600 text-white">Contact</a>
+      </div>
+    </div>
   </header>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3><a href="projects/project1.html">Project 1</a></h3>
-      <p>Short description of your project.</p>
-    </div>
-    <div class="project">
-      <h3><a href="projects/project2.html">Project 2</a></h3>
-      <p>Another project description.</p>
-    </div>
-  </section>
+  <main class="max-w-4xl mx-auto px-6 py-8">
+    <section class="mb-8">
+      <h1 class="text-3xl font-bold mb-2" id="hero-name">Your Name</h1>
+      <p class="text-lg text-gray-600" id="hero-tagline">I build useful things on the web.</p>
+    </section>
 
-  <footer>
-    <p>© 2025 Your Name</p>
+    <section id="projects" class="mb-10">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-2xl font-semibold">Projects</h2>
+        <button id="reload-projects" class="text-sm underline">Reload</button>
+      </div>
+      <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- project cards injected by JS -->
+      </div>
+    </section>
+
+    <section id="about" class="mb-10">
+      <h2 class="text-2xl font-semibold mb-2">About</h2>
+      <p class="text-gray-600" id="about-text">Short bio — replace this with your own introduction.</p>
+    </section>
+
+    <section id="contact" class="mb-10">
+      <h2 class="text-2xl font-semibold mb-2">Contact</h2>
+      <form id="contact-form" class="grid gap-3 max-w-xl">
+        <input name="name" placeholder="Your name" class="p-3 border rounded-md" required />
+        <input name="email" type="email" placeholder="Your email" class="p-3 border rounded-md" required />
+        <textarea name="message" rows="5" placeholder="Message" class="p-3 border rounded-md" required></textarea>
+        <!-- Replace the action URL with your Formspree endpoint -->
+        <input type="hidden" name="_subject" value="New message from portfolio" />
+        <button type="submit" class="px-4 py-2 rounded-md bg-sky-600 text-white">Send</button>
+        <p class="text-sm text-gray-500">Form uses <a href="https://formspree.io" target="_blank" class="underline">Formspree</a>. Replace the form action in <code>scripts/contact.js</code> with your Formspree URL.</p>
+      </form>
+      <div id="contact-result" class="mt-2 text-sm"></div>
+    </section>
+  </main>
+
+  <footer class="border-t py-6 mt-8">
+    <div class="max-w-4xl mx-auto px-6 text-center text-sm text-gray-500">
+      © <span id="footer-year"></span> Your Name — Built with ❤️ — Hosted on GitHub Pages
+    </div>
   </footer>
+
+  <script src="scripts/projects.js"></script>
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/contact.js"></script>
 </body>
 </html>

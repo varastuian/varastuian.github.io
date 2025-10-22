@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Project Alpha",
+    "description": "A short description of Project Alpha. Replace with your own.",
+    "tech": ["HTML","CSS","JavaScript"],
+    "url": "#",
+    "github": ""
+  },
+  {
+    "title": "Project Beta",
+    "description": "Another project. Add screenshots or live links.",
+    "tech": ["React","Node.js"],
+    "url": "#",
+    "github": ""
+  }
+]
